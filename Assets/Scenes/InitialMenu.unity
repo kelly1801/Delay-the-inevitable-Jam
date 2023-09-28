@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07053219, g: 0.35364687, b: 0.97003037, a: 1}
+  m_IndirectSpecularColor: {r: 0.070568636, g: 0.35362068, b: 0.97002774, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6046,9 +6046,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c68fffdfc352543cb952b34b9aa8c570, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 606910ec401804eb09925f0d57909c04, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19989,6 +19989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710278617527860085, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67,
         type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
+    - target: {fileID: 7710278617527860085, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67,
+        type: 3}
       propertyPath: settingsPanel
       value: 
       objectReference: {fileID: 1846209086}
@@ -20060,6 +20065,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7238973331969213854, guid: 8409246f35c6ccc4f8c6a0db88633b3f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 52104bc3637e70540be457e0ba1ba9cd, type: 3}
     - target: {fileID: 7502906212677905624, guid: 8409246f35c6ccc4f8c6a0db88633b3f,
         type: 3}
       propertyPath: m_Name
@@ -20221,6 +20231,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6472919370692106987, guid: a8cbb41b582962140849913bd2f647dd,
+        type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
     - target: {fileID: 6472919370692106987, guid: a8cbb41b582962140849913bd2f647dd,
         type: 3}
       propertyPath: panelToGoBack
@@ -20457,6 +20472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
         type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+    - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
+        type: 3}
       propertyPath: panelToGoBack
       value: 
       objectReference: {fileID: 1349531263}
@@ -20551,6 +20571,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4089297384200427753, guid: 11359979d91e9b5408d3d5b529ef3518,
+        type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
     - target: {fileID: 4089297384200427753, guid: 11359979d91e9b5408d3d5b529ef3518,
         type: 3}
       propertyPath: panelToGoBack

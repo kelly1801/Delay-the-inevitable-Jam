@@ -11,7 +11,7 @@ public class SettingScreen : MonoBehaviour
     private Slider effectsSlider;
 
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource effectsSource;
+    public AudioSource effectsSource;
 
   
 
@@ -30,7 +30,7 @@ public class SettingScreen : MonoBehaviour
 
     }
 
-    private void UpdateMusicVolume(AudioSource audioSource, float newVolume)
+    public void UpdateMusicVolume(AudioSource audioSource, float newVolume)
     {
         audioSource.volume = newVolume;
     }
