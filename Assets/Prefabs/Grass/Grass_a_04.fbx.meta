@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 834dc792e22bce04083cadefbc10ff33
-timeCreated: 1475606438
+guid: 3fa80e66608fa484d807c37b1174db90
+timeCreated: 1475606437
 licenseType: Store
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Grass_g_01_LOD0
+    4300000: Grass_c_04_LOD0
   materials:
     importMaterials: 1
     materialName: 0
