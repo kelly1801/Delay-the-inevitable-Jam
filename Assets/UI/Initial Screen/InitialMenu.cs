@@ -32,8 +32,6 @@ public class InitialMenu : UIManager
         settingsButton.clicked += () => TogglePanel(settingsPanel, initialPanel, false);
         tutorialButton.clicked += () => TogglePanel(tutorialPanel, initialPanel, false);
 
-        Vector3 initialPosition = startButton.transform.scale;
-        Debug.Log(initialPosition);
     }
 
     void OnDisable()
@@ -51,9 +49,6 @@ public class InitialMenu : UIManager
 
     void OnButtonHover(PointerEnterEvent evt)
     {
-        
-        
-
         if (hoverSound != null)
         {
             // Play hover sound
