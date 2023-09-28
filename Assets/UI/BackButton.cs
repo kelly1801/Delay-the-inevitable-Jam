@@ -12,7 +12,7 @@ public class BackButton : UIManager
     private GameObject thisPanel;
     [SerializeField] bool isOpen;
     [SerializeField] private AudioClip hoverSound; // Variable para el sonido de hover
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource effectsSource;
     void OnEnable()
     {
         // Initialize the Button variable and add a click event listener
@@ -36,11 +36,11 @@ public class BackButton : UIManager
 
     void OnButtonHover(PointerEnterEvent evt)
     {
-        // Verificar si se ha asignado un sonido de hover
+        // Verify hoverSound is assigned
         if (hoverSound != null)
         {
-            // Reproducir el sonido de hover en la posición del botón
-            audioSource.PlayOneShot(hoverSound);
+            // play hover sound
+            effectsSource.PlayOneShot(hoverSound);
         }
     }
 }

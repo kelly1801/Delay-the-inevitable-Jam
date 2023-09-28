@@ -13,7 +13,8 @@ public class InitialMenu : UIManager
     private Button startButton;
     private Button tutorialButton;
     private Button settingsButton;
-    [SerializeField] private AudioClip hoverSound; // Variable para el sonido de hover
+    [SerializeField] AudioSource effectsSource;
+    [SerializeField] private AudioClip hoverSound;
 
     void OnEnable()
     {
@@ -30,6 +31,9 @@ public class InitialMenu : UIManager
         startButton.clicked += () => LoadSceneByName(sceneName);
         settingsButton.clicked += () => TogglePanel(settingsPanel, initialPanel, false);
         tutorialButton.clicked += () => TogglePanel(tutorialPanel, initialPanel, false);
+
+        Vector3 initialPosition = startButton.transform.scale;
+        Debug.Log(initialPosition);
     }
 
     void OnDisable()
@@ -47,12 +51,13 @@ public class InitialMenu : UIManager
 
     void OnButtonHover(PointerEnterEvent evt)
     {
-        Debug.Log("Mouse over button");
-        // Verificar si se ha asignado un sonido de hover
+        
+        
+
         if (hoverSound != null)
         {
-            // Reproducir el sonido de hover en la posición del botón
-            AudioSource.PlayClipAtPoint(hoverSound, startButton.transform.position);
+            // Play hover sound
+          effectsSource.PlayOneShot(hoverSound);
         }
     }
 }
