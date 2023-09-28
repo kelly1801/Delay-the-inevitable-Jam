@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class InitialMenu : MonoBehaviour
+public class InitialMenu : UIManager
 {
 
-    [SerializeField] UIManager uiManager;
     [SerializeField] string sceneName;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject tutorialPanel;
@@ -24,9 +23,9 @@ public class InitialMenu : MonoBehaviour
        settingsButton = uiDocument.rootVisualElement.Q<Button>("SettingsButton");
 
 
-        startButton.clicked += () => uiManager.LoadSceneByName(sceneName);
-        settingsButton.clicked += () => uiManager.TogglePanel(settingsPanel, initialPanel, false);
-        tutorialButton.clicked += () => uiManager.TogglePanel(tutorialPanel, initialPanel, false);
+        startButton.clicked += () => LoadSceneByName(sceneName);
+        settingsButton.clicked += () => TogglePanel(settingsPanel, initialPanel, false);
+        tutorialButton.clicked += () => TogglePanel(tutorialPanel, initialPanel, false);
 
     }
 
@@ -34,9 +33,9 @@ public class InitialMenu : MonoBehaviour
     void OnDisable()
     {
         // Remove click event listeners
-        startButton.clicked -= () => uiManager.LoadSceneByName(sceneName);
-        settingsButton.clicked -= () => uiManager.TogglePanel(settingsPanel, initialPanel, false);
-        tutorialButton.clicked -= () => uiManager.TogglePanel(tutorialPanel, initialPanel, false);
+        startButton.clicked -= () => LoadSceneByName(sceneName);
+        settingsButton.clicked -= () => TogglePanel(settingsPanel, initialPanel, false);
+        tutorialButton.clicked -= () => TogglePanel(tutorialPanel, initialPanel, false);
     }
 
 }

@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class UIManager : MonoBehaviour
 {
     public bool isGamePaused;
+    protected GameObject pausePanel;
     public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -18,16 +19,25 @@ public class UIManager : MonoBehaviour
         currentPanel.SetActive(!isPanelOpen); // Toggle the script's GameObject visibility
     }
 
-    public void PauseGame()
+
+    public void SetPausePanel(GameObject newPausePanel)
     {
+        pausePanel = newPausePanel;
+    }
+    public void PauseGame(GameObject inGamePanel, GameObject pausePanel)
+    {
+
+        TogglePanel(pausePanel, inGamePanel, false);
         Time.timeScale = 0.0f; // Pause the game
         isGamePaused = true;
     }
 
-    public void ResumeGame()
+    public void ResumeGame(GameObject pausePanel)
     {
+
         Time.timeScale = 1.0f; // Resume the game
         isGamePaused = false;
+        pausePanel.SetActive(false);
     }
 
 }

@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BackButton : MonoBehaviour
+public class BackButton : UIManager
 {
 
 
-    private UIManager uiManager;
     private UIDocument uiDocument;
     private Button backButton;
     [SerializeField] GameObject panelToGoBack;
+    [SerializeField] string buttonId = "BackButton";
     private GameObject thisPanel;
+    [SerializeField] bool isOpen;
+
 
 
 
@@ -19,17 +21,16 @@ public class BackButton : MonoBehaviour
     {
         // Initialize the Button variable and add a click event listener
         thisPanel = gameObject;
-        uiManager = GetComponent<UIManager>();
         uiDocument = GetComponent<UIDocument>(); 
-        backButton = uiDocument.rootVisualElement.Q<Button>("BackButton");
-        backButton.clicked += () => uiManager.TogglePanel(panelToGoBack, thisPanel, false);
+        backButton = uiDocument.rootVisualElement.Q<Button>(buttonId);
+        backButton.clicked += () => TogglePanel(panelToGoBack, thisPanel, isOpen);
 
     }
 
     void OnDisable()
     {
         // Remove event listeners
-        backButton.clicked -= () => uiManager.TogglePanel(panelToGoBack, thisPanel, false);
+        backButton.clicked -= () => TogglePanel(panelToGoBack, thisPanel, isOpen);
 
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CreditsScreen : MonoBehaviour
+public class CreditsScreen : UIManager
 {
-    [SerializeField] UIManager uiManager;
+    
     [SerializeField] UIDocument uiDocument;
     [SerializeField] GameObject startPanel;
     [SerializeField] GameObject initialPanel;
@@ -18,7 +18,7 @@ public class CreditsScreen : MonoBehaviour
 
         backButton = uiDocument.rootVisualElement.Q<Button>("BackButton");
 
-        backButton.clicked += () => uiManager.TogglePanel(startPanel, initialPanel, false);
+        backButton.clicked += () => TogglePanel(startPanel, initialPanel, false);
 
     }
 
@@ -26,7 +26,7 @@ public class CreditsScreen : MonoBehaviour
     void OnDisable()
     {
         // Remove click event listeners
-        backButton.clicked -= () => uiManager.TogglePanel(startPanel, initialPanel, false);
+        backButton.clicked -= () => TogglePanel(startPanel, initialPanel, false);
 
     }
 }

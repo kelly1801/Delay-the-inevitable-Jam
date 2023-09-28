@@ -4,13 +4,14 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PauseScreen : MonoBehaviour
+public class PauseScreen : UIManager
 {
-    [SerializeField] UIManager uiManager;
+    
     [SerializeField] UIDocument uiDocument;
     [SerializeField] GameObject startPanel;
     [SerializeField] GameObject initialPanel;
     [SerializeField] GameObject creditsPanel;
+    [SerializeField] GameObject inGamePanel;
     [SerializeField] const string START_SCENE_NAME = "InitialMenu";
     private Button resumeButton;
     private Button creditsButton;
@@ -25,7 +26,7 @@ public class PauseScreen : MonoBehaviour
         exitButton = uiDocument.rootVisualElement.Q<Button>("ExitButton");
 
         resumeButton.clicked += ResumeEvent;
-        creditsButton.clicked += () => uiManager.TogglePanel(creditsPanel, initialPanel, false);
+        creditsButton.clicked += () => TogglePanel(creditsPanel, initialPanel, false);
         exitButton.clicked += CloseGame;
 
     }
@@ -33,15 +34,17 @@ public class PauseScreen : MonoBehaviour
     private void ResumeEvent()
     {
 
-        gameObject.SetActive(false);
-        uiManager.ResumeGame();
+       
+        ResumeGame(gameObject);
+        inGamePanel.SetActive(true);
+
     }
 
     private void CloseGame()
     {
 
         gameObject.SetActive(false);
-        uiManager.LoadSceneByName(START_SCENE_NAME);
+        LoadSceneByName(START_SCENE_NAME);
     }
 
 

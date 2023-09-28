@@ -231,14 +231,17 @@ VisualElement {
     -unity-slice-left: 0;
 }
 
-.header {
-    -unity-font: url('project://database/Assets/UI/Initial%20Screen/Vintage%20Rovery.otf?fileID=12800000&guid=bf4bee8948a87ec4cab9f4d64a2e8f01&type=3#Vintage Rovery');
-    -unity-font-style: bold;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-}
-
 .paragraph {
     -unity-font-style: bold;
     -unity-font: url('project://database/Assets/UI/Initial%20Screen/VintageHand.otf?fileID=12800000&guid=aba2828743ce0c44996c7466ef06f52d&type=3#VintageHand');
+}
+
+.pauseBtn {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: auto;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }

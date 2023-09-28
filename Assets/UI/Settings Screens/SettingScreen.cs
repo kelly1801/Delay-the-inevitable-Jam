@@ -5,12 +5,10 @@ using UnityEngine.UIElements;
 
 public class SettingScreen : MonoBehaviour
 {
-    private UIManager uiManager;
+  
     private UIDocument uiDocument;
     private Slider musicSlider;
     private Slider effectsSlider;
-
-   
 
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource effectsSource;
@@ -20,7 +18,6 @@ public class SettingScreen : MonoBehaviour
     void OnEnable()
     {
         // Initialize the Button variable and add a click event listener
-        uiManager = GetComponent<UIManager>();
         uiDocument = GetComponent<UIDocument>();
         musicSlider = uiDocument.rootVisualElement.Q<Slider>("MusicSlider");
         effectsSlider = uiDocument.rootVisualElement.Q<Slider>("EffectsSlider");
