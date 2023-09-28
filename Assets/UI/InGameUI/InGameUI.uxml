@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
+    <Style src="project://database/Assets/UI/InGameUI/inGameStyles.uss?fileID=7433441132597879392&amp;guid=43d500b9f6d0bd64c9f2bbae1b359937&amp;type=3#inGameStyles" />
+    <ui:VisualElement class="wrapper" style="flex-grow: 1;">
+        <ui:VisualElement class="game-container" style="flex-grow: 1; width: 100%;">
+            <ui:VisualElement class="header" style="flex-grow: 1;">
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; max-width: 50%;">
+                    <ui:Label tabindex="-1" text="Strength" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Fonts/Vintage%20Rovery.otf?fileID=12800000&amp;guid=bf4bee8948a87ec4cab9f4d64a2e8f01&amp;type=3#Vintage Rovery&apos;); -unity-font-definition: initial; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 1px;" />
+                    <ui:ProgressBar value="100" class="progressBar" style="overflow: hidden;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; min-width: auto; min-height: auto;">
+                    <ui:Button text="❚❚" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PauseButton" class="btn pauseBtn" style="flex-wrap: nowrap; align-self: flex-end;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

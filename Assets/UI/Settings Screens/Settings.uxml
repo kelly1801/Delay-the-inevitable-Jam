@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
+    <ui:VisualElement name="Wrapper" class="wrapper" style="padding-top: 20px;">
+        <ui:VisualElement name="Container" class="container">
+            <ui:VisualElement name="SliderContainer" focusable="true" class="menu-container">
+                <ui:Slider picking-mode="Ignore" label="Music" value="0.5" high-value="1" name="MusicSlider" class="label slider" style="background-image: none;" />
+                <ui:Slider picking-mode="Ignore" label="Effects" value="0.5" high-value="1" name="EffectsSlider" show-input-field="false" inverted="false" focusable="true" class="label slider" />
+            </ui:VisualElement>
+            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="btn-back" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
