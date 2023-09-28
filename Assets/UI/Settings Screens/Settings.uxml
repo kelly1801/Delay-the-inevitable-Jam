@@ -3,8 +3,8 @@
     <ui:VisualElement name="Wrapper" class="wrapper">
         <ui:VisualElement name="Container" class="container">
             <ui:VisualElement name="SliderContainer" focusable="true" class="menu-container">
-                <ui:Slider picking-mode="Ignore" label="Music" value="42" high-value="100" name="MusicSlider" class="label slider" style="background-image: none;" />
-                <ui:Slider picking-mode="Ignore" label="Effects" value="42" high-value="100" name="EffectsSlider" class="label slider" />
+                <ui:Slider picking-mode="Ignore" label="Music" value="0.5" high-value="1" name="MusicSlider" class="label slider" style="background-image: none;" />
+                <ui:Slider picking-mode="Ignore" label="Effects" value="0.5" high-value="1" name="EffectsSlider" show-input-field="false" inverted="false" focusable="true" class="label slider" />
             </ui:VisualElement>
             <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="btn-back" />
         </ui:VisualElement>

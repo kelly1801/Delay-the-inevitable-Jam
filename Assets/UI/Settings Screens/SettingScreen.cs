@@ -5,28 +5,44 @@ using UnityEngine.UIElements;
 
 public class SettingScreen : MonoBehaviour
 {
+    private UIManager uiManager;
+    private UIDocument uiDocument;
+    private Slider musicSlider;
+    private Slider effectsSlider;
 
-    [SerializeField] UIManager uiManager;
-    [SerializeField] UIDocument uiDocument;
-    [SerializeField] GameObject startPanel;
-    [SerializeField] GameObject initialPanel;
-    private Button backButton;
+   
+
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource effectsSource;
+
+  
 
     void OnEnable()
     {
         // Initialize the Button variable and add a click event listener
-        
-        backButton = uiDocument.rootVisualElement.Q<Button>("BackButton");
+        uiManager = GetComponent<UIManager>();
+        uiDocument = GetComponent<UIDocument>();
+        musicSlider = uiDocument.rootVisualElement.Q<Slider>("MusicSlider");
+        effectsSlider = uiDocument.rootVisualElement.Q<Slider>("EffectsSlider");
 
-        backButton.clicked += () => uiManager.TogglePanel(startPanel, initialPanel, false);
+        musicSlider.value = musicSource.volume;
+
+        // Bind the function to the slider's valueChanged event
+        musicSlider.RegisterValueChangedCallback(evt => UpdateMusicVolume(musicSource,evt.newValue));
+        effectsSlider.RegisterValueChangedCallback(evt => UpdateMusicVolume(effectsSource,evt.newValue));
 
     }
 
-
+    private void UpdateMusicVolume(AudioSource audioSource, float newVolume)
+    {
+        audioSource.volume = newVolume;
+    }
     void OnDisable()
     {
-        // Remove click event listeners
-        backButton.clicked -= () => uiManager.TogglePanel(startPanel, initialPanel, false);
-
+        // Remove event listeners
+        musicSlider.UnregisterValueChangedCallback(evt => UpdateMusicVolume(musicSource,evt.newValue));
+        effectsSlider.UnregisterValueChangedCallback(evt => UpdateMusicVolume(effectsSource, evt.newValue));
     }
+
 }
+
