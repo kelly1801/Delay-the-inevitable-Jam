@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isOnGround = true;
     [SerializeField] private UIManager uiManager;
     private Rigidbody playerRb;
+    public int cornHarvested = 0;
 
     void Start()
     {
@@ -29,13 +31,21 @@ public class PlayerController : MonoBehaviour
             MovementPlayer();
             Jump();
         }
-        
     }
 
     private void OnCollisionEnter(Collision other)
     {
         // Verify that the player is over a structure
         isOnGround = Physics.Raycast(transform.position, Vector3.down, raycastDistance);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Corn"))
+        {
+            cornHarvested++;
+            Destroy(other.gameObject);
+        }
     }
 
     private void MovementPlayer()

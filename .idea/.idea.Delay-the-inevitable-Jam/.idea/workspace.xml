@@ -6,20 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="238064ff-3b92-44d6-adaf-47a434b406cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Delay-the-inevitable-Jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Delay-the-inevitable-Jam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CART.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/CART.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/HOME.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/HOME.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/HOME_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/HOME_2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PLANTATION_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PLANTATION_1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PLANTATION_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PLANTATION_2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/TRACTOR_4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/TRACTOR_4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enviroment/Obstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enviroment/Obstacle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Big Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Big Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Box Aux.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Box Aux.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Bridge.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Bridge.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Stairs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Stairs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Wall_Narrow_01_b.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Wall_Narrow_01_b.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/InGameUI/InGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/InGameUI/InGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/InGameUI/InGameUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/InGameUI/InGameUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Minimap/Minimap.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Minimap/Minimap.renderTexture" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.sequences/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.sequences/Settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -48,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UnlockingDoors",
+    "git-widget-placeholder": "CollectingFood",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,6 +104,7 @@
       <workItem from="1695885324101" duration="2000" />
       <workItem from="1695888862163" duration="10000" />
       <workItem from="1696004935140" duration="2191000" />
+      <workItem from="1696015314075" duration="6770000" />
     </task>
     <servers />
   </component>
