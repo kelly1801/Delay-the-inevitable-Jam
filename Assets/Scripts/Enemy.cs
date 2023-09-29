@@ -11,9 +11,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] float closeDistance = 10f; // Define the distance when the color changes
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] GameObject[] screens;
-
+    private AudioManager audioManager;
+    private bool hasPlayedFirstSound = false;
     private void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         agent = GetComponent<NavMeshAgent>();
         uIManager.SetGameOverPanel(GameOverScreen);
     }
@@ -38,11 +40,14 @@ public class Enemy : MonoBehaviour
 
         // Add the "danger" class to the root element
 
-        if (distanceToPlayer < closeDistance)
+        if (distanceToPlayer < closeDistance && !hasPlayedFirstSound)
         {
 
             rootElement.AddToClassList("danger");
             // add danger music
+            audioManager.PlaySound(2, 0.3f);
+            hasPlayedFirstSound = true;
+            audioManager.PlaySound(3, 0.5f);
         } 
 
     }

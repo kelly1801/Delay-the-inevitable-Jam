@@ -15,9 +15,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isOnGround = true;
     [SerializeField] private UIManager uiManager;
     private Rigidbody playerRb;
+    private AudioManager audioManager;
 
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
     }
@@ -42,11 +44,12 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         float lateralInput = Input.GetAxis("Horizontal");
+        bool isWalking = false; // Variable para rastrear si el personaje está caminando
 
         // Calculate movement direction
         Vector3 localDirection = transform.forward;
-        Vector3 moveDirection = Input.GetKey(KeyCode.LeftShift) ? 
-            localDirection * forwardInput * playerSneakySpeed : 
+        Vector3 moveDirection = Input.GetKey(KeyCode.LeftShift) ?
+            localDirection * forwardInput * playerSneakySpeed :
             localDirection * forwardInput * playerSpeed;
 
         // Calculate the new position
@@ -58,13 +61,26 @@ public class PlayerController : MonoBehaviour
         // Rotate the player
         float rotation = lateralInput * playerRotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * rotation, Space.World);
+
+        // Reproducir sonido de caminar solo cuando el personaje está caminando
+        if (forwardInput != 0 || lateralInput != 0)
+        {
+            isWalking = true; // El personaje está caminando
+        }
+
+        if (isWalking)
+        {
+            audioManager.PlaySound(1, 0.2f); // Reproduce el sonido de caminar
+        }
     }
+
 
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
                 playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                audioManager.PlaySound(0, 0.5f);
                 isOnGround = false;
         }
     }
