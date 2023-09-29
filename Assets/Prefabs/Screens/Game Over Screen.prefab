@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9000183445879548079}
   - component: {fileID: 8851774882992240826}
+  - component: {fileID: 4089297384200427753}
   - component: {fileID: 5382389236821416058}
   m_Layer: 0
   m_Name: Game Over Screen
@@ -50,6 +51,22 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 2487a8e4e99ce0843b426b5ec70673b3,
     type: 3}
   m_SortingOrder: 0
+--- !u!114 &4089297384200427753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656840300398962421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80059d9e18a038343b253944fae928aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGamePaused: 0
+  panelToGoBack: {fileID: 0}
+  buttonId: BackButton
+  isOpen: 0
 --- !u!114 &5382389236821416058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,4 +80,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGamePaused: 0
-  gameOverPanel: {fileID: 3656840300398962421}

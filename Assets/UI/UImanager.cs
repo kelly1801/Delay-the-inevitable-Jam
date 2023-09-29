@@ -6,13 +6,12 @@ public class UIManager : MonoBehaviour
 {
     public bool isGamePaused;
     protected GameObject pausePanel;
-    [SerializeField] GameObject gameOverPanel;
-    
     public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
-    
+   
+  
     public void TogglePanel(GameObject panelToChange, GameObject currentPanel, bool isPanelOpen)
     {
         isPanelOpen = !isPanelOpen; // Toggle the panel's state
@@ -39,18 +38,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1.0f; // Resume the game
         isGamePaused = false;
         pausePanel.SetActive(false);
-    }
-
-    public void GameOver(GameObject[] panelsToDeactivate)
-    {
-        Time.timeScale = 0.0f;
-        gameOverPanel.SetActive(true);
-        // deactivate panels
-
-        foreach (GameObject panel in panelsToDeactivate)
-        {
-            panel.SetActive(false);
-        }
     }
 
 }

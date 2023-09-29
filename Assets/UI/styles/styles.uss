@@ -14,9 +14,6 @@ VisualElement {
     padding-left: 0;
     margin-top: 0;
     cursor: url('project://database/Assets/Images/Artboard_353x/Artboard%209@3x.png?fileID=2800000&guid=acdd25c1aa4d289448f4282d0e926b48&type=3#Artboard 9@3x');
-    transition-property: background-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-out;
 }
 
 .container {
@@ -273,8 +270,4 @@ VisualElement {
 :root {
     cursor: url('project://database/Assets/Images/Artboard_353x/Artboard%209@3x.png?fileID=2800000&guid=acdd25c1aa4d289448f4282d0e926b48&type=3#Artboard 9@3x');
     background-color: rgba(255, 255, 255, 0);
-}
-
-.danger {
-    background-color: rgba(176, 29, 29, 0.58);
 }
