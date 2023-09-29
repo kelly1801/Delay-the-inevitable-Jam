@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravityModifier = 5.0f;
     [SerializeField] private float raycastDistance = 1.0f;  
     [SerializeField] private bool isOnGround = true;
+    [SerializeField] private UIManager uiManager;
     private Rigidbody playerRb;
 
     void Start()
@@ -23,8 +24,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        MovementPlayer();
-        Jump();
+        if (!uiManager.isGameOver)
+        {
+            MovementPlayer();
+            Jump();
+        }
+        
     }
 
     private void OnCollisionEnter(Collision other)

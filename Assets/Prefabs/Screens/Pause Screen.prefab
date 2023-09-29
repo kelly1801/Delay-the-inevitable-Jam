@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4772049441824423383}
   - component: {fileID: 8254782886369248736}
-  - component: {fileID: 2880163626236645795}
   - component: {fileID: 7590546642072862075}
   m_Layer: 0
   m_Name: Pause Screen
@@ -51,20 +50,6 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 4648aef9eb99eab44ae74228e9478ac1,
     type: 3}
   m_SortingOrder: 0
---- !u!114 &2880163626236645795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3520292588143770880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94097540030dc5540b50adfd921dff0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGamePaused: 0
-  pausePanel: {fileID: 0}
 --- !u!114 &7590546642072862075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,8 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ad6718fc69efc46acec063ed7fb9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 2880163626236645795}
+  isGamePaused: 0
+  isGameOver: 0
   uiDocument: {fileID: 8254782886369248736}
   startPanel: {fileID: 0}
   initialPanel: {fileID: 3520292588143770880}
   creditsPanel: {fileID: 0}
+  inGamePanel: {fileID: 0}
