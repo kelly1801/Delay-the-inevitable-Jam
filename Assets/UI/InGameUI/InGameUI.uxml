@@ -8,12 +8,9 @@
                     <ui:Label tabindex="-1" text="Strength" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Fonts/Vintage%20Rovery.otf?fileID=12800000&amp;guid=bf4bee8948a87ec4cab9f4d64a2e8f01&amp;type=3#Vintage Rovery&apos;); -unity-font-definition: initial; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 1px;" />
                     <ui:ProgressBar value="100" class="progressBar" style="overflow: hidden;" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; min-width: auto; min-height: auto;">
-                    <ui:Button text="❚❚" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PauseButton" class="btn pauseBtn" style="flex-wrap: nowrap; align-self: flex-end;" />
+                <ui:VisualElement class="minimap-container">
+                    <ui:VisualElement class="minimap" />
                 </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement class="minimap-container" style="flex-grow: 1; width: 240px; height: 240px; background-image: url(&apos;project://database/Assets/Images/Artboard_353x/Artboard%209@3x.png?fileID=21300000&amp;guid=acdd25c1aa4d289448f4282d0e926b48&amp;type=3#Artboard 9@3x&apos;); min-width: auto; min-height: auto; max-width: 240px; max-height: 240px; flex-direction: column; flex-wrap: nowrap; align-items: center; justify-content: center; align-self: flex-start;">
-                <ui:VisualElement class="minimap" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

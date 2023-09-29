@@ -1,4 +1,3 @@
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -15,14 +14,21 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-
         agent = GetComponent<NavMeshAgent>();
+        uIManager.SetGameOverPanel(GameOverScreen);
     }
     
-    
-
-    // Update is called once per frame
     void Update()
+    {
+
+        if (!uIManager.isGameOver)
+        {
+            FollowPlayer();
+        }
+     
+    }
+
+    private void FollowPlayer()
     {
         agent.destination = player.position;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -34,27 +40,21 @@ public class Enemy : MonoBehaviour
 
         if (distanceToPlayer < closeDistance)
         {
-         
+
             rootElement.AddToClassList("danger");
             // add danger music
-        }
-        else
-        {
-            rootElement.RemoveFromClassList("danger");
-
-
-        }
-
+        } 
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Player"))
         {
             uIManager.GameOver(screens);
         }
     }
-
-
+   
 }
+

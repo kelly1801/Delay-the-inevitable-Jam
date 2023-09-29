@@ -279,16 +279,13 @@ VisualElement {
     background-color: rgba(176, 29, 29, 0.58);
 }
 
-.minimap-container {
-}
-
 .minimap {
     flex-grow: 1;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
     background-image: url('project://database/Assets/UI/Minimap/Minimap.renderTexture?fileID=8400000&guid=7e2b798f0891c854a849ddad304163fd&type=2#Minimap');
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-top-left-radius: 500px;
     border-top-right-radius: 500px;
     border-bottom-right-radius: 500px;
@@ -301,4 +298,20 @@ VisualElement {
     border-right-color: rgba(195, 85, 45, 0.99);
     border-top-color: rgba(195, 85, 45, 0.99);
     border-bottom-color: rgba(195, 85, 45, 0.99);
+}
+
+.minimap-container {
+    flex-grow: 1;
+    width: 320px;
+    height: 320px;
+    background-image: url('project://database/Assets/Images/Artboard_353x/Artboard%209@3x.png?fileID=21300000&guid=acdd25c1aa4d289448f4282d0e926b48&type=3#Artboard 9@3x');
+    min-width: auto;
+    min-height: auto;
+    max-width: 320px;
+    max-height: 320px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
     public bool isGamePaused;
     protected GameObject pausePanel;
-    [SerializeField] GameObject gameOverPanel;
-    
+    protected GameObject gameOverPanel;
+    public bool isGameOver;
+
     public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -25,6 +25,11 @@ public class UIManager : MonoBehaviour
     {
         pausePanel = newPausePanel;
     }
+
+    public void SetGameOverPanel(GameObject newGameOverPanel)
+    {
+        gameOverPanel = newGameOverPanel;
+    }
     public void PauseGame(GameObject inGamePanel, GameObject pausePanel)
     {
 
@@ -35,7 +40,6 @@ public class UIManager : MonoBehaviour
 
     public void ResumeGame(GameObject pausePanel)
     {
-
         Time.timeScale = 1.0f; // Resume the game
         isGamePaused = false;
         pausePanel.SetActive(false);
@@ -43,13 +47,18 @@ public class UIManager : MonoBehaviour
 
     public void GameOver(GameObject[] panelsToDeactivate)
     {
-        Time.timeScale = 0.0f;
+        isGameOver = true;
         gameOverPanel.SetActive(true);
-        // deactivate panels
+       
+        // deactivate other active panels
 
         foreach (GameObject panel in panelsToDeactivate)
         {
-            panel.SetActive(false);
+            if (panel.activeSelf)
+            {
+                panel.SetActive(false);
+            }
+           
         }
     }
 
