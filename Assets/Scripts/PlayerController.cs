@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -12,11 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 20.0f;
     [SerializeField] private float gravityModifier = 5.0f;
     [SerializeField] private float raycastDistance = 1.0f;  
-    [SerializeField] private bool isOnGround = true;
     [SerializeField] private UIManager uiManager;
+    private bool hasPowerUp = false;
+    private bool isOnGround = true;
     private Rigidbody playerRb;
     private AudioManager audioManager;
     private Animator animator;
+    public int cornHarvested = 0;
 
     void Start()
     {
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
             MovementPlayer();
             Jump();
         }
-        
+        if (cornHarvested == 10) hasPowerUp = true;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -43,11 +46,24 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("TurnHead", false);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Corn"))
+        {
+            if (cornHarvested<10)
+            {
+                cornHarvested++;
+                Destroy(other.gameObject);
+            }
+        }
+        
+    }
+
     private void MovementPlayer()
     {
         float forwardInput = Input.GetAxis("Vertical");
         float lateralInput = Input.GetAxis("Horizontal");
-        bool isWalking = forwardInput != 0 || lateralInput != 0; // Variable para rastrear si el personaje está caminando
+        bool isWalking = forwardInput != 0 || lateralInput != 0; // Variable para rastrear si el personaje estï¿½ caminando
         bool isSneaking = Input.GetKey(KeyCode.LeftShift) && playerSneakySpeed > 0;
 
         // Calculate movement direction
@@ -66,7 +82,7 @@ public class PlayerController : MonoBehaviour
         float rotation = lateralInput * playerRotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * rotation, Space.World);
 
-        // Reproducir sonido de caminar solo cuando el personaje está caminando
+        // Reproducir sonido de caminar solo cuando el personaje estï¿½ caminando
         animator.SetBool("Run", isWalking);
 
         animator.SetBool("Walk", isSneaking);
@@ -88,5 +104,10 @@ public class PlayerController : MonoBehaviour
                 audioManager.PlaySound(0, 0.5f);
                 isOnGround = false;
         }
+    }
+
+    private void UsePowerUp()
+    {
+        
     }
 }
