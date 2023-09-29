@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07053219, g: 0.35364687, b: 0.97003037, a: 1}
+  m_IndirectSpecularColor: {r: 0.070568636, g: 0.35362068, b: 0.97002774, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20060,9 +20060,6 @@ PrefabInstance:
       propertyPath: sceneName
       value: Level 1
       objectReference: {fileID: 0}
-      propertyPath: hoverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
     - target: {fileID: 7710278617527860085, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67,
         type: 3}
       propertyPath: effectsSource
@@ -20565,10 +20562,15 @@ PrefabInstance:
         type: 3}
       propertyPath: hoverSound
       value: 
-      objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
     - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
         type: 3}
       propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1950804919}
+    - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
+        type: 3}
+      propertyPath: effectsSource
       value: 
       objectReference: {fileID: 1950804919}
     - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
