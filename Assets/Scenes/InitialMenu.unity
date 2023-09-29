@@ -16704,9 +16704,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.764151, g: 0, b: 0, a: 1}
-  m_Intensity: 569.7
-  m_Range: 306.2
+  m_Color: {r: 0.9528302, g: 0.5783108, b: 0.47341868, a: 0.15686275}
+  m_Intensity: 124.2
+  m_Range: 147
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -16747,7 +16747,7 @@ Light:
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 329
+  m_BounceIntensity: 257.8
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -19986,6 +19986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710278617527860085, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67,
+        type: 3}
+      propertyPath: sceneName
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 7710278617527860085, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67,
         type: 3}
