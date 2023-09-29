@@ -5,7 +5,7 @@
         <ui:VisualElement name="Screen" class="game-container" style="flex-grow: 1; width: 100%;">
             <ui:VisualElement name="Section" class="header" style="flex-grow: 1;">
                 <ui:VisualElement name="HarvestBar" style="flex-grow: 1; flex-direction: row; max-width: 50%;">
-                    <ui:Label tabindex="-1" text="Strength" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Fonts/Vintage%20Rovery.otf?fileID=12800000&amp;guid=bf4bee8948a87ec4cab9f4d64a2e8f01&amp;type=3#Vintage Rovery&apos;); -unity-font-definition: initial; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 1px;" />
+                    <ui:Label tabindex="-1" text="Strength" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                     <ui:ProgressBar value="4" name="CornsHarvestedBar" view-data-key="CornsHarvestedBar" class="progressBar" style="overflow: hidden;" />
                 </ui:VisualElement>
                 <ui:VisualElement class="minimap-container">

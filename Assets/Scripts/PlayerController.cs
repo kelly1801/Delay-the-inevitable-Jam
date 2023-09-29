@@ -13,8 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 20.0f;
     [SerializeField] private float gravityModifier = 5.0f;
     [SerializeField] private float raycastDistance = 1.0f;  
-    [SerializeField] private bool isOnGround = true;
     [SerializeField] private UIManager uiManager;
+    private bool hasPowerUp = false;
+    private bool isOnGround = true;
     private Rigidbody playerRb;
     public int cornHarvested = 0;
 
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
             MovementPlayer();
             Jump();
         }
+        if (cornHarvested == 10) hasPowerUp = true;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -43,9 +45,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Corn"))
         {
-            cornHarvested++;
-            Destroy(other.gameObject);
+            if (cornHarvested<10)
+            {
+                cornHarvested++;
+                Destroy(other.gameObject);
+            }
         }
+        
     }
 
     private void MovementPlayer()
@@ -77,5 +83,10 @@ public class PlayerController : MonoBehaviour
                 playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 isOnGround = false;
         }
+    }
+
+    private void UsePowerUp()
+    {
+        
     }
 }
