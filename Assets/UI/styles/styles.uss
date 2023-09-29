@@ -278,3 +278,27 @@ VisualElement {
 .danger {
     background-color: rgba(176, 29, 29, 0.58);
 }
+
+.minimap-container {
+}
+
+.minimap {
+    flex-grow: 1;
+    max-width: 200px;
+    max-height: 200px;
+    background-image: url('project://database/Assets/UI/Minimap/Minimap.renderTexture?fileID=8400000&guid=7e2b798f0891c854a849ddad304163fd&type=2#Minimap');
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 500px;
+    border-bottom-left-radius: 500px;
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-left-color: rgba(195, 85, 45, 0.99);
+    border-right-color: rgba(195, 85, 45, 0.99);
+    border-top-color: rgba(195, 85, 45, 0.99);
+    border-bottom-color: rgba(195, 85, 45, 0.99);
+}

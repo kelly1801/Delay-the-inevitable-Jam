@@ -12,6 +12,9 @@
                     <ui:Button text="❚❚" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PauseButton" class="btn pauseBtn" style="flex-wrap: nowrap; align-self: flex-end;" />
                 </ui:VisualElement>
             </ui:VisualElement>
+            <ui:VisualElement class="minimap-container" style="flex-grow: 1; width: 240px; height: 240px; background-image: url(&apos;project://database/Assets/Images/Artboard_353x/Artboard%209@3x.png?fileID=21300000&amp;guid=acdd25c1aa4d289448f4282d0e926b48&amp;type=3#Artboard 9@3x&apos;); min-width: auto; min-height: auto; max-width: 240px; max-height: 240px; flex-direction: column; flex-wrap: nowrap; align-items: center; justify-content: center; align-self: flex-start;">
+                <ui:VisualElement class="minimap" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
