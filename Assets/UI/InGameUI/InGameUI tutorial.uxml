@@ -8,6 +8,9 @@
                     <ui:Label tabindex="-1" text="Strength" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                     <ui:ProgressBar value="4" name="CornsHarvestedBar" view-data-key="CornsHarvestedBar" class="progressBar" style="overflow: hidden;" />
                 </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Button text="Play now" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" class="btn" style="font-size: 14px;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
