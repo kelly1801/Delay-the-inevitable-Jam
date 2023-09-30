@@ -48,7 +48,10 @@ public class Enemy : MonoBehaviour
             audioManager.PlaySound(2, 0.3f);
             hasPlayedFirstSound = true;
             audioManager.PlaySound(3, 0.5f);
-        } 
+        } else
+        {
+            rootElement.RemoveFromClassList("danger");
+        }
 
     }
 
