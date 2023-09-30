@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private AudioManager audioManager;
     private Animator animator;
     public int cornHarvested = 0;
+    private bool isEating = false;
+    private float eatAnimationDuration = 2.0f; 
+    private float eatAnimationTimer = 0.0f;
 
     void Start()
     {
@@ -36,28 +39,48 @@ public class PlayerController : MonoBehaviour
             MovementPlayer();
             Jump();
         }
+
+        if (isEating)
+        {
+            eatAnimationTimer += Time.deltaTime;
+
+            // Verifica si la animación de comer ha terminado
+            if (eatAnimationTimer >= eatAnimationDuration)
+            {
+                isEating = false;
+                eatAnimationTimer = 0.0f;
+                animator.SetBool("Eat", false); // Cambia la animación de "Eat" a false
+            }
+        }
+
         if (cornHarvested == 10) hasPowerUp = true;
     }
+
 
     private void OnCollisionEnter(Collision other)
     {
         // Verify that the player is over a structure
         isOnGround = Physics.Raycast(transform.position, Vector3.down, raycastDistance);
         animator.SetBool("TurnHead", false);
+        animator.SetBool("Eat", false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Corn"))
         {
-            if (cornHarvested<10)
+            audioManager.PlaySound(4, 0.3f);
+            animator.SetBool("Eat", true); // Activa la animación de "Eat"
+            isEating = true;
+            eatAnimationTimer = 0.0f; // Reinicia el temporizador
+            if (cornHarvested < 10)
             {
                 cornHarvested++;
                 Destroy(other.gameObject);
             }
         }
-        
     }
+
 
     private void MovementPlayer()
     {
