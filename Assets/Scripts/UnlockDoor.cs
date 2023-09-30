@@ -21,7 +21,6 @@ public class UnlockDoor : MonoBehaviour
 
         Collider[] allColliders = GetComponentsInChildren<Collider>();
         switches = System.Array.FindAll(allColliders, collider => collider.isTrigger);
-        Debug.Log(switches.Length);
         foreach (Collider doorSwitch in switches) 
         {
             doorSwitch.gameObject.AddComponent<TriggerListener>(); // Add Listener to the switches
@@ -29,9 +28,10 @@ public class UnlockDoor : MonoBehaviour
     }
     private void Update()
     {
-        if (switchesActivated == switches.Length) isOpen = true;
+        if (switchesActivated == switches.Length && switchesActivated > 0) isOpen = true;
         if (isOpen)
         {
+            SeparateChildren();
             OpenTheDoor();
         }
 
@@ -41,5 +41,13 @@ public class UnlockDoor : MonoBehaviour
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
         if (transform.position == targetPosition) Destroy(gameObject);
+    }
+
+    private void SeparateChildren()
+    {
+        foreach (Collider doorSwitch in switches) 
+        {
+            doorSwitch.gameObject.transform.SetParent(null); 
+        }
     }
 }

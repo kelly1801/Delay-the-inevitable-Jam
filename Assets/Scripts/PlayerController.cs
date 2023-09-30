@@ -9,17 +9,17 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float playerSneakySpeed = 1.0f;
-    [SerializeField] private float playerRotationSpeed = 50.0f ;
-    [SerializeField] private float jumpForce = 20.0f;
+    [SerializeField] private float playerRotationSpeed = 70.0f ;
+    [SerializeField] private float jumpForce = 15.0f;
+    [SerializeField] private float flyForce = 15.0f;
     [SerializeField] private float gravityModifier = 5.0f;
-    [SerializeField] private float raycastDistance = 1.0f;  
+    [SerializeField] private float raycastDistance = 0.5f;  
     [SerializeField] private UIManager uiManager;
-    private bool hasPowerUp = false;
     private bool isOnGround = true;
     private Rigidbody playerRb;
     private AudioManager audioManager;
     private Animator animator;
-    public int cornHarvested = 0;
+    public float cornHarvested = 10.0f;
     private bool isEating = false;
     private float eatAnimationDuration = 2.0f; 
     private float eatAnimationTimer = 0.0f;
@@ -34,10 +34,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Verify that the player is over a structure
+        isOnGround = Physics.Raycast(transform.position, Vector3.down, raycastDistance);
         if (!uiManager.isGameOver)
         {
             MovementPlayer();
             Jump();
+            //Fly();
         }
 
         if (isEating)
@@ -52,15 +55,11 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Eat", false); // Cambia la animación de "Eat" a false
             }
         }
-
-        if (cornHarvested == 10) hasPowerUp = true;
     }
 
 
     private void OnCollisionEnter(Collision other)
     {
-        // Verify that the player is over a structure
-        isOnGround = Physics.Raycast(transform.position, Vector3.down, raycastDistance);
         animator.SetBool("TurnHead", false);
         animator.SetBool("Eat", false);
     }
@@ -73,9 +72,9 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Eat", true); // Activa la animación de "Eat"
             isEating = true;
             eatAnimationTimer = 0.0f; // Reinicia el temporizador
-            if (cornHarvested < 10)
+            if (cornHarvested < 100)
             {
-                cornHarvested++;
+                cornHarvested += 10;
                 Destroy(other.gameObject);
             }
         }
@@ -129,8 +128,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void UsePowerUp()
-    {
-        
-    }
+    // private void Fly()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Space) && !isOnGround && cornHarvested > 0)
+    //     {
+    //         playerRb.useGravity = false;
+    //         playerRb.velocity = new Vector3(playerRb.velocity.x, 0.0f,playerRb.velocity.z);
+    //         playerRb.AddForce(Vector3.down * flyForce);
+    //         cornHarvested -= 0.1f;
+    //
+    //         // Asegurarse de que no se salga de control aplicando una fuerza máxima hacia arriba
+    //         if (playerRb.velocity.y > 0 && playerRb.velocity.y > flyForce)
+    //         {
+    //             playerRb.velocity = new Vector3(playerRb.velocity.x, flyForce, playerRb.velocity.z);
+    //         }
+    //     }
+    //
+    //     if (Input.GetKeyUp(KeyCode.Space) || cornHarvested <= 0)
+    //     {
+    //         playerRb.AddForce(Vector3.down * flyForce);
+    //         playerRb.useGravity = true;
+    //     }
+    // }
 }
