@@ -14,7 +14,8 @@ public class UnlockDoor : MonoBehaviour
     [SerializeField] string doorTag = "Goal"; // Tag to identify the final door
 
     [SerializeField] UIManager uIManager;
-   
+
+    private bool isSceneChangeInitiated = false;
     void Start()
     {
         // Door opening limit
@@ -32,9 +33,10 @@ public class UnlockDoor : MonoBehaviour
         if (switchesActivated == switches.Length && switchesActivated > 0 && !isOpen)
         {
             isOpen = true;
-            if (switchesActivated == 2 && gameObject.CompareTag(doorTag)) // Check if goal door is open
+            if (!isSceneChangeInitiated)
             {
-                uIManager.LoadSceneByName("WonScene");
+                isSceneChangeInitiated = true;
+                Invoke("ChangeScene", 5f); // Call ChangeScene function after 5 seconds
             }
         }
         if (isOpen)
@@ -58,5 +60,10 @@ public class UnlockDoor : MonoBehaviour
         {
             doorSwitch.gameObject.transform.SetParent(null); 
         }
+    }
+
+    private void ChangeScene()
+    {
+        uIManager.LoadSceneByName("WonScene"); // Change the scene to "WonScene"
     }
 }
