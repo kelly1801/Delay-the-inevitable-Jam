@@ -281,11 +281,11 @@ VisualElement {
 
 .minimap {
     flex-grow: 1;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
     background-image: url('project://database/Assets/UI/Minimap/Minimap.renderTexture?fileID=8400000&guid=7e2b798f0891c854a849ddad304163fd&type=2#Minimap');
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-top-left-radius: 500px;
     border-top-right-radius: 500px;
     border-bottom-right-radius: 500px;
@@ -302,13 +302,13 @@ VisualElement {
 
 .minimap-container {
     flex-grow: 1;
-    width: 320px;
-    height: 320px;
+    width: 220px;
+    height: 220px;
     background-image: url('project://database/Assets/Images/Artboard_353x/Artboard%209@3x.png?fileID=21300000&guid=acdd25c1aa4d289448f4282d0e926b48&type=3#Artboard 9@3x');
     min-width: auto;
     min-height: auto;
-    max-width: 320px;
-    max-height: 320px;
+    max-width: 220px;
+    max-height: 220px;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;

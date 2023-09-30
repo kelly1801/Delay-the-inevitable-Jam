@@ -10,7 +10,6 @@ public class InitialMenu : UIManager
     [SerializeField] GameObject initialPanel;
     [SerializeField] UIDocument uiDocument;
     private Button startButton;
-    private Button tutorialButton;
     private Button settingsButton;
     [SerializeField] AudioSource effectsSource;
     [SerializeField] private AudioClip hoverSound;
@@ -23,7 +22,6 @@ public class InitialMenu : UIManager
 
         // Agregar un listener para el evento PointerEnter
         startButton.RegisterCallback<PointerEnterEvent>(OnButtonHover);
-        tutorialButton.RegisterCallback<PointerEnterEvent>(OnButtonHover);
         settingsButton.RegisterCallback<PointerEnterEvent>(OnButtonHover);
 
         startButton.clicked += () => LoadSceneByName(sceneName);
