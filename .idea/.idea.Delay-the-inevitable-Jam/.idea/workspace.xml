@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="238064ff-3b92-44d6-adaf-47a434b406cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Delay-the-inevitable-Jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Delay-the-inevitable-Jam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enviroment/LowPolyFarmLite_URP/Prefabs/Grass_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enviroment/LowPolyFarmLite_URP/Prefabs/Grass_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Fence.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Fence.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Stairs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wood Elements/Stairs.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/InGameUI/InGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/InGameUI/InGame.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <workItem from="1695888862163" duration="10000" />
       <workItem from="1696004935140" duration="2191000" />
       <workItem from="1696015314075" duration="8409000" />
-      <workItem from="1696047665495" duration="2803000" />
+      <workItem from="1696047665495" duration="12937000" />
     </task>
     <servers />
   </component>

@@ -11,7 +11,7 @@ public class InGame : UIManager
     [SerializeField] private GameObject playerGameObject;
     private GameObject thisPanel;
     private PlayerController playerController;
-    private int cornHarvested;
+    private float cornHarvested;
     private ProgressBar cornsHarvestedBar;
 
     private void Start()
@@ -39,7 +39,7 @@ public class InGame : UIManager
            PauseGame(thisPanel, pausePanel);
        }
        cornHarvested = playerController.cornHarvested;
-       cornsHarvestedBar.value = cornHarvested * 10;
+       cornsHarvestedBar.value = cornHarvested;
    }
 
 }
