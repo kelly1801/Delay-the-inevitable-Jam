@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float playerRotationSpeed = 50.0f ;
     [SerializeField] private float jumpForce = 20.0f;
     [SerializeField] private float gravityModifier = 5.0f;
-    [SerializeField] private float raycastDistance = 1.0f;  
+    [SerializeField] private float raycastDistance = 0.5f;  
     [SerializeField] private UIManager uiManager;
     private bool hasPowerUp = false;
     private bool isOnGround = true;
@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Verify that the player is over a structure
+        isOnGround = Physics.Raycast(transform.position, Vector3.down, raycastDistance);
         if (!uiManager.isGameOver)
         {
             MovementPlayer();
@@ -59,8 +61,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        // Verify that the player is over a structure
-        isOnGround = Physics.Raycast(transform.position, Vector3.down, raycastDistance);
         animator.SetBool("TurnHead", false);
         animator.SetBool("Eat", false);
     }
