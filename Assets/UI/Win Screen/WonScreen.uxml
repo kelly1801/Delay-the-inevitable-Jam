@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles/wonScreen.uss?fileID=7433441132597879392&amp;guid=dc6d8ce8d52c65146a735ac4a4ab2f8f&amp;type=3#wonScreen" />
+    <ui:VisualElement class="wrapper" style="flex-grow: 1;">
+        <ui:VisualElement class="container">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="You are free!" parse-escape-sequences="true" display-tooltip-when-elided="true" class="title" />
+            </ui:VisualElement>
+            <ui:Button text="Restart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestartButton" class="btn" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
