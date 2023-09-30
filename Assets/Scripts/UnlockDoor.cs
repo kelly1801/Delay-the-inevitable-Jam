@@ -28,7 +28,7 @@ public class UnlockDoor : MonoBehaviour
     }
     private void Update()
     {
-        if (switchesActivated == switches.Length) isOpen = true;
+        if (switchesActivated == switches.Length && switchesActivated > 0) isOpen = true;
         if (isOpen)
         {
             SeparateChildren();
