@@ -7,7 +7,6 @@ public class InitialMenu : UIManager
 {
     [SerializeField] string sceneName;
     [SerializeField] GameObject settingsPanel;
-    [SerializeField] GameObject tutorialPanel;
     [SerializeField] GameObject initialPanel;
     [SerializeField] UIDocument uiDocument;
     private Button startButton;
@@ -20,7 +19,6 @@ public class InitialMenu : UIManager
     {
         // Initialize the Button variable and add a click event listener
         startButton = uiDocument.rootVisualElement.Q<Button>("StartButton");
-        tutorialButton = uiDocument.rootVisualElement.Q<Button>("TutorialButton");
         settingsButton = uiDocument.rootVisualElement.Q<Button>("SettingsButton");
 
         // Agregar un listener para el evento PointerEnter
@@ -30,7 +28,6 @@ public class InitialMenu : UIManager
 
         startButton.clicked += () => LoadSceneByName(sceneName);
         settingsButton.clicked += () => TogglePanel(settingsPanel, initialPanel, false);
-        tutorialButton.clicked += () => TogglePanel(tutorialPanel, initialPanel, false);
 
     }
 
@@ -39,11 +36,9 @@ public class InitialMenu : UIManager
         // Remove click event listeners
         startButton.clicked -= () => LoadSceneByName(sceneName);
         settingsButton.clicked -= () => TogglePanel(settingsPanel, initialPanel, false);
-        tutorialButton.clicked -= () => TogglePanel(tutorialPanel, initialPanel, false);
 
         // Eliminar los listeners de PointerEnter
         startButton.UnregisterCallback<PointerEnterEvent>(OnButtonHover);
-        tutorialButton.UnregisterCallback<PointerEnterEvent>(OnButtonHover);
         settingsButton.UnregisterCallback<PointerEnterEvent>(OnButtonHover);
     }
 

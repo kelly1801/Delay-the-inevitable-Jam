@@ -9401,18 +9401,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 962828942}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &966685182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1238838749605385363, guid: 190aad62e90a1a64b967daae1766f101,
-    type: 3}
-  m_PrefabInstance: {fileID: 6848335293291615154}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &966685186 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-    type: 3}
-  m_PrefabInstance: {fileID: 6848335293291615154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &986762745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12196,6 +12184,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1289512857655943898}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349531268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349531263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d0f5bee42722a4582144b6a2b39b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGamePaused: 0
+  isGameOver: 0
+  buttonId: TutorialButton
+  sceneName: Tutorial
 --- !u!1001 &1350227529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12605,7 +12609,6 @@ Transform:
   - {fileID: 1846209091}
   - {fileID: 1349531267}
   - {fileID: 1238305815}
-  - {fileID: 966685186}
   - {fileID: 602965262}
   - {fileID: 1328323950}
   m_Father: {fileID: 0}
@@ -20657,11 +20660,15 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialPanel
       value: 
-      objectReference: {fileID: 966685182}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5635291194982203935, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349531268}
   m_SourcePrefab: {fileID: 100100000, guid: 8c55a63800ebd274a8f9ec7d8d1d7b67, type: 3}
 --- !u!1001 &1484440970259828851
 PrefabInstance:
@@ -21005,99 +21012,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba323f0b50c9915498dd49ae6c3b8e83, type: 3}
---- !u!1001 &6848335293291615154
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1379261447}
-    m_Modifications:
-    - target: {fileID: 1238838749605385363, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_Name
-      value: Tutorial Screen
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238838749605385363, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851483960878588520, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: hoverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
-    - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1950804919}
-    - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: effectsSource
-      value: 
-      objectReference: {fileID: 1950804919}
-    - target: {fileID: 9161046778462971136, guid: 190aad62e90a1a64b967daae1766f101,
-        type: 3}
-      propertyPath: panelToGoBack
-      value: 
-      objectReference: {fileID: 1349531263}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 190aad62e90a1a64b967daae1766f101, type: 3}
 --- !u!1001 &8168834152145634001
 PrefabInstance:
   m_ObjectHideFlags: 0

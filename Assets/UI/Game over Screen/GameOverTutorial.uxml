@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
+    <ui:VisualElement class="wrapper" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+        <ui:VisualElement name="GameOverContainer" class="container" style="-unity-text-align: upper-left; white-space: nowrap; text-overflow: ellipsis;">
+            <ui:Label tabindex="-1" text="Now lets play" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 70px; white-space: normal; -unity-text-align: upper-center; -unity-font: url(&apos;project://database/Assets/Fonts/VintageHand.otf?fileID=12800000&amp;guid=aba2828743ce0c44996c7466ef06f52d&amp;type=3#VintageHand&apos;); -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(0, 0, 0);" />
+            <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestartButton" class="btn-back" style="position: absolute; top: 89%; right: 40%; bottom: initial; margin-bottom: 0; padding-top: 24px; padding-right: 14px; padding-bottom: 18px; padding-left: 22px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
