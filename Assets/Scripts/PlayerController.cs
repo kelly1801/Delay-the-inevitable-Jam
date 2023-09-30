@@ -66,18 +66,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            uiManager.LoadSceneByName("WonScene");
+
+        }
         if (other.gameObject.CompareTag("Corn"))
         {
             audioManager.PlaySound(4, 0.3f);
-            animator.SetBool("Eat", true); // Activa la animación de "Eat"
+            animator.SetBool("Eat", true); // Activate "Eat" animation
             isEating = true;
-            eatAnimationTimer = 0.0f; // Reinicia el temporizador
+            eatAnimationTimer = 0.0f; // restart temp
             if (cornHarvested < 100)
             {
                 cornHarvested += 10;
                 Destroy(other.gameObject);
             }
         }
+
+       
     }
 
 

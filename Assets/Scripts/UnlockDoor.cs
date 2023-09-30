@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class UnlockDoor : MonoBehaviour
 {
@@ -14,6 +11,10 @@ public class UnlockDoor : MonoBehaviour
     
     private Vector3 targetPosition;
 
+    [SerializeField] string doorTag = "Goal"; // Tag to identify the final door
+
+    [SerializeField] UIManager uIManager;
+   
     void Start()
     {
         // Door opening limit
@@ -28,7 +29,14 @@ public class UnlockDoor : MonoBehaviour
     }
     private void Update()
     {
-        if (switchesActivated == switches.Length && switchesActivated > 0) isOpen = true;
+        if (switchesActivated == switches.Length && switchesActivated > 0 && !isOpen)
+        {
+            isOpen = true;
+            if (switchesActivated == 2 && gameObject.CompareTag(doorTag)) // Check if goal door is open
+            {
+                uIManager.LoadSceneByName("WonScene");
+            }
+        }
         if (isOpen)
         {
             SeparateChildren();
@@ -41,6 +49,7 @@ public class UnlockDoor : MonoBehaviour
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
         if (transform.position == targetPosition) Destroy(gameObject);
+        
     }
 
     private void SeparateChildren()
