@@ -12,14 +12,14 @@ public class GameOver : UIManager
         // Initialize the Button variable and add a click event listener
         uiDocument = GetComponent<UIDocument>();
         backButton = uiDocument.rootVisualElement.Q<Button>(buttonId);
-        backButton.clicked += () => LoadSceneByName("InitialMenu");
+        backButton.clicked += () => LoadSceneByName("Level 1");
 
     }
 
     void OnDisable()
     {
         // Remove event listeners
-        backButton.clicked -= () => LoadSceneByName("InitialMenu");
+        backButton.clicked -= () => LoadSceneByName("Level 1");
 
     }
 }
