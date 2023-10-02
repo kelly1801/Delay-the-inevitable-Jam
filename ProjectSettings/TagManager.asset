@@ -9,6 +9,7 @@ TagManager:
   - Box
   - Corn
   - Goal
+  - Ground
   layers:
   - Default
   - TransparentFX

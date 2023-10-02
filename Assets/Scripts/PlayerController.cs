@@ -99,11 +99,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                if (!isPushing)
-                {
-                    other.gameObject.transform.SetParent(transform);
-                    isPushing = true;
-                }
+                other.gameObject.transform.SetParent(transform); 
+                isPushing = true;
             }
         }
     }
@@ -161,12 +158,15 @@ public class PlayerController : MonoBehaviour
             audioManager.PlaySound(1, 0.2f); // Plays the sound of walking
         }
 
-        if (!isWalking)
+        if (isPushing)
         {
-            Transform box = transform.Find("Box Aux");
-            if (box)
+            if (!isWalking)
             {
-                box.SetParent(null);
+                Transform box = transform.Find("Box Aux");
+                if (box)
+                {
+                    box.SetParent(null);
+                }
             }
         }
     }
