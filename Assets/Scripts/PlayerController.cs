@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
     private void PowerUp()
     {
         jumpForce = 25;
+        playerSpeed = 10;
         StartCoroutine(ReduceCornHarvestedOverTime());
     }
 
@@ -163,8 +164,8 @@ public class PlayerController : MonoBehaviour
 
         // Ensure cornHarvested reaches the exact target value to avoid approximation errors
         cornHarvested = targetCorn;
-
-        // Additional logic after reducing cornHarvested can be placed here
+        jumpForce = 15;
+        playerSpeed = 5;
     }
 
     // private void Fly()
