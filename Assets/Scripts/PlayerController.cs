@@ -14,13 +14,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float glideForce = 150.0f;
     [SerializeField] private float cornConsumptionRate = 10f;
     [SerializeField] private float gravityModifier = 5.0f;
-    [SerializeField] private float raycastDistance = 0.5f;  
+    [SerializeField] private float raycastDistance = 1f;  
     [SerializeField] private UIManager uiManager;
     
     private bool isOnGround = true;
     private bool isJumping = true;
     private bool isGliding = false;
     private bool isEating = false;
+    private bool isPushing = false;
+    
     
     private float maxHeight = 2.0f;
     private float jumpStartYPosition = 1.3f;
@@ -92,6 +94,18 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("TurnHead", false);
         animator.SetBool("Eat", false);
+    
+        if (other.gameObject.CompareTag("Box"))
+        {
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+            {
+                if (!isPushing)
+                {
+                    other.gameObject.transform.SetParent(transform);
+                    isPushing = true;
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,7 +114,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             uiManager.LoadSceneByName("WonScene");
-
         }
         if (other.gameObject.CompareTag("Corn"))
         {
@@ -147,6 +160,15 @@ public class PlayerController : MonoBehaviour
         {
             audioManager.PlaySound(1, 0.2f); // Plays the sound of walking
         }
+
+        if (!isWalking)
+        {
+            Transform box = transform.Find("Box Aux");
+            if (box)
+            {
+                box.SetParent(null);
+            }
+        }
     }
     private void Jump()
     {
@@ -158,6 +180,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Glide()
     {
+        // Check if the player is in the max height of the jump
         if (transform.position.y >= jumpStartYPosition + maxHeight)
         {
             isGliding = true;
