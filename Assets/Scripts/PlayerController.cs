@@ -55,6 +55,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Eat", false); // Cambia la animación de "Eat" a false
             }
         }
+
+        if (cornHarvested ==  100) {
+            PowerUp();
+        }
     }
 
 
@@ -134,6 +138,33 @@ public class PlayerController : MonoBehaviour
                 audioManager.PlaySound(0, 0.5f);
                 isOnGround = false;
         }
+    }
+
+    private void PowerUp()
+    {
+        jumpForce = 25;
+        StartCoroutine(ReduceCornHarvestedOverTime());
+    }
+
+    private IEnumerator ReduceCornHarvestedOverTime()
+    {
+        float duration = 10f; // The duration over which you want to reduce cornHarvested (in seconds)
+        float targetCorn = 10f; // The target value for cornHarvested
+
+        float startCorn = cornHarvested;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            cornHarvested = Mathf.Lerp(startCorn, targetCorn, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure cornHarvested reaches the exact target value to avoid approximation errors
+        cornHarvested = targetCorn;
+
+        // Additional logic after reducing cornHarvested can be placed here
     }
 
     // private void Fly()
