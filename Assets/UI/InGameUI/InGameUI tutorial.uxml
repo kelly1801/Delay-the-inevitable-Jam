@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
+    <Style src="project://database/Assets/UI/styles/inGameStyles.uss?fileID=7433441132597879392&amp;guid=43d500b9f6d0bd64c9f2bbae1b359937&amp;type=3#inGameStyles" />
+    <ui:VisualElement name="Wrapper" class="wrapper" style="flex-grow: 1;">
+        <ui:VisualElement name="Screen" class="game-container" style="flex-grow: 1; width: 100%;">
+            <ui:VisualElement name="Section" class="header" style="flex-grow: 1;">
+                <ui:VisualElement name="HarvestBar" style="flex-grow: 1; flex-direction: row; max-width: 50%;">
+                    <ui:Label tabindex="-1" text="Strength" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:ProgressBar value="4" name="CornsHarvestedBar" view-data-key="CornsHarvestedBar" class="progressBar" style="overflow: hidden;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Button text="Play now" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" class="btn" style="font-size: 14px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

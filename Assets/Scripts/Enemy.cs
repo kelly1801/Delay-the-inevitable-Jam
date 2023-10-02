@@ -1,4 +1,3 @@
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -12,17 +11,26 @@ public class Enemy : MonoBehaviour
     [SerializeField] float closeDistance = 10f; // Define the distance when the color changes
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] GameObject[] screens;
-
+    private AudioManager audioManager;
+    private bool hasPlayedFirstSound = false;
     private void Start()
     {
-
+        audioManager = FindAnyObjectByType<AudioManager>();
         agent = GetComponent<NavMeshAgent>();
+        uIManager.SetGameOverPanel(GameOverScreen);
     }
     
-    
-
-    // Update is called once per frame
     void Update()
+    {
+
+        if (!uIManager.isGameOver)
+        {
+            FollowPlayer();
+        }
+     
+    }
+
+    private void FollowPlayer()
     {
         agent.destination = player.position;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -32,29 +40,30 @@ public class Enemy : MonoBehaviour
 
         // Add the "danger" class to the root element
 
-        if (distanceToPlayer < closeDistance)
+        if (distanceToPlayer < closeDistance && !hasPlayedFirstSound)
         {
-         
+
             rootElement.AddToClassList("danger");
             // add danger music
+            audioManager.PlaySound(2, 0.3f);
+            hasPlayedFirstSound = true;
+            audioManager.PlaySound(3, 0.5f);
         }
-        else
+        else if (distanceToPlayer >= closeDistance)
         {
             rootElement.RemoveFromClassList("danger");
-
-
+            
         }
-
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Player"))
         {
             uIManager.GameOver(screens);
         }
     }
-
-
+   
 }
+

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
+    <ui:VisualElement class="wrapper" style="flex-grow: 1;">
+        <ui:VisualElement class="tutorial-container" style="flex-grow: 1; width: 100%; height: 100%; flex-direction: column-reverse;">
+            <ui:Label tabindex="-1" text="Jump to climb the boxes with the space bar and collect more corns to get more sped and jump higher" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Two" style="background-image: url(&apos;project://database/Assets/Images/Artboard_353x/Artboard%205@3x.png?fileID=2800000&amp;guid=b9a0a63cd93272c4b9eca1604f7bda66&amp;type=3#Artboard 5@3x&apos;); -unity-font: url(&apos;project://database/Assets/Fonts/Vintage%20Rovery.otf?fileID=12800000&amp;guid=bf4bee8948a87ec4cab9f4d64a2e8f01&amp;type=3#Vintage Rovery&apos;); -unity-font-definition: initial; padding-top: 11px; padding-right: 66px; padding-bottom: 11px; padding-left: 66px; -unity-text-align: upper-center; font-size: 16px; color: rgb(255, 255, 255); white-space: normal;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

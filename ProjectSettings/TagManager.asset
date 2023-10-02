@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Open
+  - Box
+  - Corn
+  - Goal
   layers:
   - Default
   - TransparentFX

@@ -1,17 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
+    <Style src="project://database/Assets/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=933905ccfd59f404eb73ebfa9e0e7e80&amp;type=3#styles" />
     <ui:VisualElement class="wrapper" style="top: 5px;">
         <ui:VisualElement class="container" style="flex-grow: 1;">
-            <ui:VisualElement class="menu-container" style="flex-grow: 0; flex-direction: column; justify-content: flex-end; align-items: center; padding-top: 16px; padding-bottom: 49px; padding-right: 49px; padding-left: 49px;">
+            <ui:VisualElement class="menu-container">
                 <ui:Label tabindex="-1" text="Development Team" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="header" style="-unity-text-align: upper-center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 6px; padding-right: 6px; padding-bottom: 6px; padding-left: 6px;" />
                 <ui:Label tabindex="-1" text="Kelly Chara&#10;Javier Gonzales&#10;Alexander Murcia" parse-escape-sequences="true" display-tooltip-when-elided="true" focusable="true" class="paragraph" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(255, 255, 255);" />
                 <ui:Label tabindex="-1" text="Assets" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="header" style="-unity-text-align: upper-center;" />
-                <ui:Label tabindex="-1" text="- creator 1&#10;- creator 2&#10;- creator 3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="paragraph" style="-unity-text-align: upper-center;" />
-                <ui:Label tabindex="-1" text="Music" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="header" style="-unity-text-align: upper-center;" />
-                <ui:Label tabindex="-1" text="- creator 1&#10;- creator 2&#10;- creator 3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="paragraph" style="-unity-text-align: upper-center;" />
-                <ui:Label tabindex="-1" text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="title" style="left: 45%; top: -50px; color: rgb(255, 255, 255); -unity-text-outline-color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Fonts/VintageHand.otf?fileID=12800000&amp;guid=aba2828743ce0c44996c7466ef06f52d&amp;type=3#VintageHand&apos;); -unity-font-style: bold;" />
+                <ui:Label tabindex="-1" text="Polymount&#10;Unity Technologies&#10;Creature&apos;s Goodies&#10;Maxime Brunoni&#10;&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" class="paragraph" style="-unity-text-align: upper-center;" />
+                <ui:Label tabindex="-1" text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="title" style="left: auto; top: -50px; color: rgb(255, 255, 255); -unity-text-outline-color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Fonts/VintageHand.otf?fileID=12800000&amp;guid=aba2828743ce0c44996c7466ef06f52d&amp;type=3#VintageHand&apos;); -unity-font-style: bold; right: 32%;" />
+                <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="btn-back" style="max-width: 126px; max-height: 80px; position: absolute; left: auto; bottom: -80px; top: auto; right: 32%;" />
             </ui:VisualElement>
-            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="btn-back" style="position: absolute; top: 96%; right: 40%;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

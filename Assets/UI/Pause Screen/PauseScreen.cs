@@ -39,7 +39,7 @@ public class PauseScreen : UIManager
 
     private void CloseGame()
     {
-
+        ResumeGame(gameObject);
         gameObject.SetActive(false);
         LoadSceneByName(START_SCENE_NAME);
     }
